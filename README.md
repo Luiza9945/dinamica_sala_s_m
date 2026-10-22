@@ -1,0 +1,1 @@
+# dinamica_sala_s_m
