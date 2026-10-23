@@ -1,9 +1,4 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ========================================
-    // 1. MODAL DE LOGIN
-    // ========================================
 
     const modalLogin = document.getElementById('modal-container');
     const btnLogin = document.getElementById('btn-login');
@@ -28,11 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-
-    // ========================================
-    // 2. MENU LATERAL DO PERFIL
-    // ========================================
 
     const menuPerfil = document.getElementById('menu-perfil');
     const fundoPerfil = document.getElementById('fundo-perfil');
@@ -60,11 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fundoPerfil) {
         fundoPerfil.addEventListener('click', fecharMenuPerfil);
     }
-
-
-    // ========================================
-    // 3. PESQUISA DE RECEITAS
-    // ========================================
 
     const barraPesquisa = document.getElementById('barra-pesquisa');
     const iconeLupa = document.getElementById('icone-lupa');
@@ -98,12 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         iconeLupa.addEventListener('click', pesquisarReceitas);
     }
 
-
-    // ========================================
-    // 4. ESTRELAS E NOTAS DAS RECEITAS
-    // ========================================
-
-    // Configura uma estrela e evita adicionar o mesmo evento duas vezes
     function configurarEstrela(estrela) {
         if (estrela.dataset.eventoConfigurado === 'true') return;
 
@@ -114,10 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
             evento.preventDefault();
             evento.stopPropagation();
 
-            // Alterna o estado da estrela
             const ficouAtiva = estrela.classList.toggle('ativa');
 
-            // Encontra a nota ao lado da estrela
             const contadorP = estrela.nextElementSibling;
 
             if (contadorP) {
@@ -132,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Configura as estrelas que já estão no HTML
     function configurarTodasAsEstrelas() {
         if (!muralReceitas) return;
 
@@ -144,11 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     configurarTodasAsEstrelas();
-
-
-    // ========================================
-    // 5. MODAL DE DETALHES DA RECEITA
-    // ========================================
 
     const modalReceita = document.getElementById(
         'modal-receita-container'
@@ -207,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (muralReceitas) {
         muralReceitas.addEventListener('click', (evento) => {
-            // A estrela tem sua própria ação
             if (evento.target.closest('.avaliacao-receita .img-icone')) {
                 return;
             }
@@ -234,11 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // ========================================
-    // 6. MODAL DE CRIAR RECEITA
-    // ========================================
-
     const btnCriarReceita = document.getElementById('btn-criar-receita');
     const modalCriarReceita = document.getElementById('modal-criar-receita');
     const btnFecharCriar = document.getElementById('btn-fechar-criar');
@@ -264,11 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-
-    // ========================================
-    // 7. PUBLICAR NOVA RECEITA
-    // ========================================
 
     if (formCriarReceita) {
         formCriarReceita.addEventListener('submit', (evento) => {
@@ -322,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const titulo = document.createElement('p');
                 titulo.textContent = nome;
 
-                // Cria a avaliação com a estrela do projeto
                 const avaliacao = document.createElement('div');
                 avaliacao.classList.add('avaliacao-receita');
 
@@ -339,12 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (muralReceitas) {
                     muralReceitas.prepend(novaReceita);
-
-                    // Faz a estrela da nova receita funcionar também
                     configurarEstrela(estrela);
                 }
 
-                // Atualiza a quantidade de receitas no perfil
                 const quantidadeReceitas = document.getElementById(
                     'quantidade-receitas'
                 );
@@ -354,7 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         muralReceitas.querySelectorAll('.receita').length;
                 }
 
-                // Limpa a pesquisa para exibir a nova receita
                 if (barraPesquisa) {
                     barraPesquisa.value = '';
                     pesquisarReceitas();
@@ -373,11 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
             leitor.readAsDataURL(arquivoImagem);
         });
     }
-
-
-    // ========================================
-    // 8. FECHAR MODAIS E MENU COM ESC
-    // ========================================
 
     document.addEventListener('keydown', (evento) => {
         if (evento.key === 'Escape') {

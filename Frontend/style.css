@@ -1,4 +1,3 @@
-
 * {
     --branco: #ffffff;
     --verde: #1B3C29;
@@ -13,8 +12,6 @@ body {
     background: var(--branco);
     color: var(--verde);
 }
-
-/* CABEÇALHO */
 
 .cabecalho {
     display: flex;
@@ -36,8 +33,6 @@ body {
     align-items: center;
 }
 
-
-
 .btn-perfil,
 #btn-login {
     width: 75px;
@@ -49,8 +44,6 @@ body {
     cursor: pointer;
     font-size: 11px;
 }
-
-/* BUSCA */
 
 .campo-busca {
     display: flex;
@@ -70,8 +63,6 @@ body {
     height: 30px;
     padding: 0 10px;
 }
-
-/* MURAL DE RECEITAS */
 
 .mural-receitas {
     margin: 30px auto;
@@ -125,8 +116,6 @@ p {
     padding: 5px;
 }
 
-/* MODAIS */
-
 .modal-container {
     display: none;
     position: fixed;
@@ -162,8 +151,6 @@ p {
     margin-bottom: 25px;
     text-align: center;
 }
-
-/* FORMULÁRIO DE LOGIN */
 
 #form-login {
     display: flex;
@@ -216,8 +203,6 @@ p {
     transform: translateY(-1px);
 }
 
-/* BOTÃO FECHAR DO MODAL */
-
 .btn-fechar {
     position: absolute;
     top: 12px;
@@ -242,8 +227,6 @@ p {
     color: var(--verde);
 }
 
-/* ANIMAÇÃO DOS MODAIS */
-
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -255,8 +238,6 @@ p {
         transform: translateY(0) scale(1);
     }
 }
-
-/* MODAL DE DETALHES DA RECEITA */
 
 .modal-receita-conteudo {
     max-width: 500px;
@@ -299,8 +280,6 @@ p {
     line-height: 1.5;
 }
 
-/* FUNDO ESCURO DO MENU LATERAL */
-
 .fundo-perfil {
     position: fixed;
     inset: 0;
@@ -317,8 +296,6 @@ p {
     opacity: 1;
     visibility: visible;
 }
-
-/* MENU LATERAL DE PERFIL */
 
 .menu-perfil {
     position: fixed;
@@ -342,8 +319,6 @@ p {
     left: 0;
 }
 
-/* BOTÃO FECHAR DO MENU */
-
 .fechar-perfil {
     align-self: flex-end;
     width: 35px;
@@ -361,8 +336,6 @@ p {
     background: var(--laranja);
     color: var(--verde);
 }
-
-/* FOTO E NOME NO MENU */
 
 .perfil-menu {
     text-align: center;
@@ -403,8 +376,6 @@ p {
     font-weight: 600;
 }
 
-/* ESTATÍSTICAS DO PERFIL */
-
 .estatisticas-perfil {
     display: flex;
     gap: 10px;
@@ -433,8 +404,6 @@ p {
     padding: 5px 0 0;
 }
 
-/* BOTÃO CRIAR RECEITA */
-
 .btn-criar-receita {
     width: 100%;
     padding: 13px;
@@ -455,16 +424,12 @@ p {
     transform: translateY(-2px);
 }
 
-/* LINHA DIVISÓRIA */
-
 .menu-perfil hr {
     width: 100%;
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 15px;
 }
-
-/* OPÇÕES DO MENU */
 
 .opcoes-menu {
     display: flex;
@@ -489,8 +454,6 @@ p {
     padding-left: 17px;
 }
 
-/* RODAPÉ DO MENU */
-
 .rodape-menu {
     margin-top: auto;
     padding-top: 25px;
@@ -507,8 +470,6 @@ p {
     color: #d7e3d9;
     font-size: 12px;
 }
-
-/* AJUSTES PARA CELULARES */
 
 @media (max-width: 600px) {
     .cabecalho {
@@ -543,10 +504,6 @@ p {
         grid-template-columns: 1fr;
     }
 }
-
-
-
-/* MODAL DE CRIAR RECEITA */
 
 .modal-criar-conteudo {
     max-width: 550px;
@@ -634,24 +591,22 @@ p {
     }
 }
 
-/* A estrela existente pode ser clicada */
 .avaliacao-receita .img-icone {
     cursor: pointer;
 }
 
-/* Destaque visual quando a receita é favorita */
 .avaliacao-receita .img-icone.favoritado {
     filter: brightness(1.2) saturate(1.5);
     transform: scale(1.1);
 }
-/* Quando a estrela tiver a classe 'ativa', aplica um filtro para deixá-la amarela */
+
 .img-icone.ativa {
     filter: invert(78%) sepia(85%) saturate(1115%) hue-rotate(359deg) brightness(102%) contrast(105%);
-    transform: scale(1.15); /* Efeito opcional de leve aumento */
+    transform: scale(1.15);
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-/* Deixa a estrela com ponteiro de clique */
 .img-icone {
     cursor: pointer;
-    transition: transform 0.2s ease, filter 0.2s ease;}
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
